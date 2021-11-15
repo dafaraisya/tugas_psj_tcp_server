@@ -23,14 +23,8 @@ int getSensor(){
 }
 
 void setup() {
-
-  delay(500); // Let the module self-initialize
   USE_SERIAL.begin(115200);
-  //pinMode(Pin_D7,OUTPUT);
-  //pinMode(Pin_D8,OUTPUT);
-//  pinMode(A0,INPUT);
-  for(uint8_t t = 4; t > 0; t--) {
-    USE_SERIAL.printf("[SETUP] WAIT %d...\n", t);
+  for(uint8_t t = 3; t > 0; t--) {
     USE_SERIAL.flush();
     delay(500);
   }
@@ -38,28 +32,10 @@ void setup() {
 }
 
 void loop() {
-  delay(1000);
-  
-//  digitalWrite(Pin_D7, HIGH); //Turn D7 On
-//  delay(100); //Wait for sensor
-//  Value_D7 = analogRead(0); //Read Analog pin as D7
-//  digitalWrite(Pin_D7, LOW); //Turn D7 Off
-  
-  //Repeat for D8
-//  digitalWrite(Pin_D8, HIGH); //Turn D8 On
-//  delay(100); //Wait for sensor
-//  Value_D8 = analogRead(0); //Read Analog pin as D8
-//  digitalWrite(Pin_D8, LOW); //Turn D8 Off
-//  delay(100); //Wait for sensor
-  
-  //Print the results to the serial monitor
-//  Serial.print("nilai sensor hujan = ");
-//  Serial.println(Value_D7);
-//  Serial.print(" Nilai sensor cahaya = ");
-//  Serial.println(Value_D8);
-  Serial.print("nilai sensor suhu = ");
-  USE_SERIAL.println(getSensor());
-  Serial.write(101);
+  //delay(1000);
+//  Serial.print("nilai sensor suhu = ");
+  //USE_SERIAL.println(getSensor());
+  Serial.write(1);
   Serial.write(getSensor());
   delay(1000);
 }

@@ -30,7 +30,7 @@ void openfile(void)
 void  readfile(void)
 {
   unsigned char ichar; 
-  unsigned char dataread[2];
+  unsigned char dataread;
   int  i,ifd;
   FILE *fileoutput;
   time_t rawtime;
@@ -41,34 +41,18 @@ void  readfile(void)
   	exit(0);
   }
   
-  for (i = 0; i<30; i++) {
+  for (i = 0; i<10; i++) {
   	time (&rawtime);
 	timeinfo = localtime (&rawtime);
 	ifd = read(fd, &ichar, 1);
-	printf("%d\n", ichar);
-	if(i%1==0){
-	    fprintf (fileoutput,"\nCurrent local time and date: %s", asctime(timeinfo));
-	}
-        if (ichar == 101) {
+	//printf("%d\n", ichar);
+	fprintf (fileoutput,"\nCurrent local time and date: %s", asctime(timeinfo));
+        if (ichar == 1) {
 	    printf("Suhu Terdeteksi : ");
-	    ifd = read(fd, &dataread, 2);
-	    printf("%d\n", dataread[1]);	
-	    fprintf(fileoutput,"Suhu : %d", dataread[1]);
+	    ifd = read(fd, &dataread, 1);
+	    printf("\n%d\n", dataread);	
+	    fprintf(fileoutput,"Suhu : %d", dataread);
 	}
-/*
-	if (ichar == 102) {
-	   printf("data ke dua : ");
-	   ifd = read(fd, &dataread, 2);
-	   printf("%.2x,%.2x\n",dataread[0],dataread[1]);	
-	   fprintf(fileoutput,"Kelembaban Tanah : %.2x,%.2x",dataread[0],dataread[1]);
-	}
-	if (ichar == 103) {
-	   printf("data ke tiga : ");
-	   ifd = read(fd, &dataread, 2);
-	   printf("%.2x,%.2x\n",dataread[0],dataread[1]);	
-	   fprintf(fileoutput,"Intensitas Cahaya : %.2x,%.2x",dataread[0],dataread[1]);
-	}
-*/
 	fprintf(fileoutput,"\n");
 	sleep(1);
   }

@@ -1,0 +1,30 @@
+
+Current local time and date: Mon Nov 15 11:33:35 2021
+Suhu : 30
+
+Current local time and date: Mon Nov 15 11:33:36 2021
+Suhu : 30
+
+Current local time and date: Mon Nov 15 11:33:37 2021
+Suhu : 30
+
+Current local time and date: Mon Nov 15 11:33:38 2021
+Suhu : 30
+
+Current local time and date: Mon Nov 15 11:33:39 2021
+Suhu : 30
+
+Current local time and date: Mon Nov 15 11:33:40 2021
+Suhu : 30
+
+Current local time and date: Mon Nov 15 11:33:41 2021
+Suhu : 30
+
+Current local time and date: Mon Nov 15 11:33:42 2021
+Suhu : 30
+
+Current local time and date: Mon Nov 15 11:33:43 2021
+Suhu : 30
+
+Current local time and date: Mon Nov 15 11:33:44 2021
+Suhu : 30
